@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration status="info">
+    <Properties>
+        <Property name="logDir">C:\digital_number_scanner\logs</Property>
+        <Property name="layout">%d [%t] %-5level %logger{36} - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="${layout}" />
+        </Console>
+
+        <RollingFile name="fileLogger" fileName="${logDir}/digitalNumberScannerService.log"
+                     filePattern="${logDir}/digitalNumberScannerService-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="2" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="digitalNumberScannerService" level="info" additivity="false">
+            <appender-ref ref="fileLogger" level="info"/>
+        </Logger>
+        <Root level="info" additivity="false">
+            <appender-ref ref="Console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
