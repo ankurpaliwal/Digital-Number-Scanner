@@ -4,6 +4,7 @@ Suppose there are nine digit numbers represented in digital format. It looks lik
 ...._.._....._.._.._.._.._.
 ..|._|._||_||_.|_...||_||_|
 ..||_.._|..|._||_|..||_|._|
+
 Each digital number is three lines long, and each line is exactly 27 characters wide. A number has nine digits, from 0-9. The numbers are composed of underscores "_" and pipes "|". An empty line separates multiple numbers. An digital.number.scanner.input file could contain up to 400 entries.
 
 Requirements
@@ -19,8 +20,10 @@ FR1.3 Processor that can process parts of the input. Probably chunk by chunk sin
 FR1.4 Symbol reader that can iterate over the 3-char wider digits in a number.
 FR1.5 Symbol matcher that can interpret the digit represented by 3x3 char matrix.
 FR1.6 Output writer that converts recognized digits to string and writes to console.
+
 BR2 Unfortunately, the digital.number.scanner.classifier is not perfect and sometimes provides illegal characters that do not transform into a number. If the number cannot be read, replace the illegal characters with an "?" and append "ILL" to the output.
 FR2.1 Symbol validator that identifies that the symbol is not one of the valid digits. This is mostly same solution as FR1.5
+
 Non-Functional Requirements
 NFR1 Please make it a maven project.
 NFR2 Testing your solution is important part of the task - we will pay special attention to the coverage and corner cases considered.
@@ -29,6 +32,7 @@ Implement digital.number.scanner.service.BaseScannerServiceIntegrationTest class
 Cover all the cases you find necessary within the framework established
 Cover all classes and non-private methods as you find necessary
 NFR3 Also bear in mind that the implementation will set the stage for our live session to follow - as part of this session we will ask you to evolve your solution to support new requirement.
+
 Extendable so that we can adopt new requirements relatively easily.
 Extract components where practical.
 Use-cases
